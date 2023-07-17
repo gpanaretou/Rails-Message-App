@@ -13,10 +13,21 @@
     
         <div class="card p-2 bg-light rounded border border-dark custom-height">
             <div class="card-body">
-                <div class="d-flex flex-row justify-content-start mb-4">
+
+                <%# <div class="d-flex flex-row justify-content-start mb-1">
                     <em>ADMIN</em> : Welcome
-                </div>
+                </div> %>
+
+                <% @messages.each do |message| %>
+                    <div class="d-flex flex-row justify-content-start mb-1">
+                        <div class="fw-bold"> <%= message.user.username %>: &nbsp;</div> 
+                         <div>  <%= message.body %> </div>
+                    </div>
+                <% end %>
+
             </div>
+
+            
             
             <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
