@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "chatroom#index"
   get "chatroom", to: "chatroom#show"
+  
+  get "login", to: "sessions#new"
+  post "login", to: "sessions#create" 
 end
