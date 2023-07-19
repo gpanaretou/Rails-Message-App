@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
-
-    def new
+    before_action :logged_in_redirect, only: [:new, :create]
+    
+    def new   
 
     end
 
@@ -10,7 +11,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             flash[:notice] = "Logged in successfully"
             redirect_to root_path
-        else
+        else 
             flash.now[:alert] = "There was something wrong with your credentials"
             render 'new', status: :unprocessable_entity
         end 
@@ -19,7 +20,16 @@ class SessionsController < ApplicationController
     def destroy
         session[:user_id] = nil
         flash[:notice] = "Logged out"
-        redirect_to root_path
+        redirect_to login_path
+    end
+
+    private
+
+    def logged_in_redirect
+        if logged_in?
+            flash[:error] = "You are already logged in"
+            redirect_to root_path
+        end
     end
 
 end
