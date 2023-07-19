@@ -1,0 +1,22 @@
+<%= form_with(model: @user, url: login_path, local:true) do |f| %>
+    <div class="mb-3">
+        <%# <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> %>
+        <%= f.label :username, class:"form-label" %>
+        <%= f.text_area :username, class:"form-control", placeholder:"Enter your username" %>
+    </div>
+    <div class="mb-3">
+        <%# <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1"> %>
+        <%= f.label :password, class:"form-label" %>
+        <%= f.password_field :password, class:"form-control" %>
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <div class="d-grid mx-auto">
+        <%# <button type="submit" class="btn btn-lg btn-primary">Log in</button> %>
+        <%= f.submit "Log in", class:"btn btn-lg btn-primary" %>
+    </div>
+<% end %>
