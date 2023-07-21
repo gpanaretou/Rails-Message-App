@@ -13,6 +13,6 @@ consumer.subscriptions.create("ChatroomChannel", {
   received(data) {
     // Called when there's incoming data on the websocket for this channel
     $('#message-container').append(data)
-    scroll_bottom()
+    scroll_bottom();
   }
 });

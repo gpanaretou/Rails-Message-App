@@ -24,3 +24,11 @@
     overflow: auto;
     overflow-wrap: break-word;
 }
+
+#message-body {
+    text-transform: none;
+}
+
+#not-visible {
+    visibility: hidden;
+}
