@@ -19,3 +19,8 @@
 .custom-height {
     height: 400px
 }
+
+#message-container {
+    overflow: auto;
+    overflow-wrap: break-word;
+}
