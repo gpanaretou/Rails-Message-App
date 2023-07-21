@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   get "signup", to: "users#new"
 
   post 'message', to: 'messages#create'
+
+  # Add Websocket route
+  mount ActionCable.server, at: '/cable'
   
 end
