@@ -6,3 +6,12 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "channels"
+
+
+window.scroll_bottom = function() {
+    if ($('#message-container').length > 0) {
+      $('#message-container').scrollTop($('#message-container')[0].scrollHeight);
+    }
+}
+ 
+scroll_bottom();
